@@ -1,5 +1,6 @@
 SELECT *,
 DATE_DIFF(adoptable_from,date_found,  DAY) AS Days_Adoptale, /*Calculating the Adoptability days from the day found */
 IF (breed Like '%Mix%','Mix','Pure') AS breed_category /*Categorizing Breeds as Mix or Pure*/
-FROM `data-analyst-portfolio-420314.ShelterDogs1.ShelterDogs` WHERE date_found >= '2010-01-01' /* Filtering data from 2010 only to most current date */
+FROM `data-analyst-portfolio-420314.ShelterDogs1.ShelterDogs` 
+WHERE date_found >= '2010-01-01' /* Filtering data from 2010 only to most current date */
 AND breed != 'Adoptable From:' /* Filtering out Data Entry that is not Breed, data error entry */
